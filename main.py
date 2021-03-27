@@ -19,6 +19,16 @@ def movie_add():
     movies.append(movie)
 
 
+def movies_list():
+    print("These are all your movies: \n")
+    print("========================================")
+    for movie in movies:
+        print(f"title: {movie['title']}")
+        print(f"director: {movie['director']}")
+        print(f"release year: {movie['release_year']}")
+        print("========================================")
+
+
 selection = input(MENU_PROMPT)
 
 while selection != 'q':
@@ -26,7 +36,7 @@ while selection != 'q':
         movie_add()
         print("The movie was added successfully")
     elif selection == 'l':
-        pass
+        movies_list()
     elif selection == 'f':
         pass
     else:
